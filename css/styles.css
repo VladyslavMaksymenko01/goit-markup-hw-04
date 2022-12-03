@@ -95,9 +95,7 @@ ol {
 /* ________ШАПКА________*/
 
 .page-header {
-  width: 1600px;
-  height: 80px;
-  margin: 0 auto;
+  border: 1px solid #ECECEC;
 }
 
 .nav-contact {
@@ -164,9 +162,21 @@ ol {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
-.contacts .contact-links:hover,
-.contacts .contact-links:focus {
+
+.contact-links{
+  display: flex;
+  align-items: center;
+}
+
+.icon-contact{
+  margin-right: 10px;
+  fill: currentColor;
+}
+.contacts .contact-links:hover{
   color: var(--accent-text-color);
+}
+.contact-links:hover .icon-contact{
+fill: var(--accent-text-color);
 }
 .contacts {
   display: flex;
@@ -177,18 +187,11 @@ ol {
   padding: 32px 0;
   margin-right: 50px;
 }
-.contact-items::before {
-  content: "";
-}
+
 .contacts-items:last-child {
   margin-right: 0px;
 }
-.envelope {
-  content: "12";
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-}
+
 
 
 /* ________ГЕРОЙ________*/
@@ -196,9 +199,18 @@ ol {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
+  margin: 0 auto;
   text-align: center;
   background-color: var(--secondary-bg-color);
+  background-image: linear-gradient( rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)), url(../images/hero-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  max-width: 1600px;
+
 }
+
+
 .hero-title {
   margin-bottom: 30px;
   margin-left: auto;
@@ -242,6 +254,7 @@ ol {
   display: flex;
 }
 
+
 .features-items {
   margin-right: 30px;
   width: 270px;
@@ -249,11 +262,20 @@ ol {
 .features-items:last-child {
   margin-right: 0px;
 }
-
-.feature-icons{
-  background-color:var(--third-bg-color);
+.features-container{
+  
+}
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 100px;
+  background-color: var(--third-bg-color);
   margin-bottom: 30px;
 }
+.feature-icons{
+}
+
 .features-titles {
   margin-bottom: 10px;
   font-size: 14px;
@@ -348,10 +370,14 @@ justify-content: center;
 align-items: center;
 }
 
-.team-social-link:hover .team-social-icons{
+.team-social-link:hover .team-social-icons,
+.team-social-link:focus .team-social-icons
+{
   fill: var(--third-text-color);
 }
-.team-social-link:hover{
+.team-social-link:hover,
+.team-social-link:focus
+{
   background-color: var(--accent-text-color);
 }
 .team-social-icons {
@@ -372,27 +398,27 @@ align-items: center;
 .customer-item {
   width: 170px;
   height: 92px;
-  border: 1px solid #AFB1B8;
-  border-radius: 4px;
 }
 
-.customer-item:not(last-child){
+.customer-item:not(:last-child){
 margin-right: 30px;
 }
+
 .customer-link {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #AFB1B8;
+  border-radius: 4px;
 }
 
 
-.customer-item:hover .customer-icons{
-  
+.customer-link:hover .customer-icons{
   fill: var(--accent-text-color);
 }
-.customer-item:hover{
+.customer-link:hover{
   border-color: var(--accent-text-color);
 }
 
@@ -466,10 +492,7 @@ margin-right: 30px;
  .contact-links{
   display: flex;
  }
-.icon-contact{
-  margin-right: 10px;
-  order: -1;
-}
+
 
 /* ---DIVS---- */
 .footer-all{
@@ -477,13 +500,10 @@ margin-right: 30px;
   align-items: baseline;
 }
 .footer-logo-address{
+  min-width: 231px;
   margin-right: 70px;
 }
 
-.social {
-  width: 206px;
-  height: 80px;
-}
 .social-title {
   font-family: 'Roboto';
   font-style: normal;
@@ -520,10 +540,12 @@ justify-content: center;
 align-items: center;
 }
 
-.footer-social-link:hover .footer-social-icons{
+.footer-social-link:hover .footer-social-icons,
+footer-social-link:focus .footer-social-icons{
   fill: var(--third-text-color);
 }
-.footer-social-link:hover{
+.footer-social-link:hover,
+.footer-social-link:focus{
   background-color: var(--accent-text-color);
 }
 .footer-social-icons {
@@ -557,6 +579,7 @@ align-items: center;
 .filtr-btn:focus {
   background-color: var(--accent-text-color);
   color: var(--third-text-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 /*________СПИСОК САЙТІВ ФІЛЬТР________*/
@@ -574,6 +597,9 @@ align-items: center;
   border: 1px solid #eeeeee;
 }
 
+.link-hover{
+  display: inline-block;
+}
 .link-hover:hover{
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
